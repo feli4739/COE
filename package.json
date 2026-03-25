@@ -1,0 +1,29 @@
+{
+  "name": "fireburst-people",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "build": "npm run build -w server && npm run build -w client",
+    "db:setup": "npm run db:setup -w server",
+    "docker:init": "powershell -ExecutionPolicy Bypass -File scripts/docker-init.ps1",
+    "docker:init:tunnel": "powershell -ExecutionPolicy Bypass -File scripts/docker-init.ps1 -WithTunnel",
+    "docker:tunnel:recreate": "docker compose --profile tunnel up -d --no-deps --force-recreate cloudflared",
+    "docker:logs:tunnel": "docker compose logs -f cloudflared",
+    "qa:run": "tsx qa/run.ts",
+    "qa:smoke": "tsx qa/run.ts --tags=smoke",
+    "qa:regression": "tsx qa/run.ts --tags=regression",
+    "qa:api": "tsx qa/run.ts --tags=api"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "concurrently": "^9.1.2",
+    "playwright": "^1.58.2",
+    "tsx": "^4.21.0"
+  }
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FireBurst QA Report - run-2026-03-25T06-31-59-990Z</title>
+  <style>
+    body { background:#0b0b0d; color:#f4f4f5; font-family: ui-sans-serif, system-ui; margin:0; padding:24px; }
+    .wrap { max-width:1100px; margin:0 auto; }
+    h1 { color:#ff3b30; margin:0 0 8px; }
+    .meta { color:#a0a0ad; margin-bottom:18px; }
+    .grid { display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:12px; margin-bottom:20px; }
+    .kpi { background:#121217; border:1px solid #242430; border-radius:12px; padding:12px; }
+    .kpi .v { font-size:26px; font-weight:700; color:#fff; }
+    .card { background:#121217; border:1px solid #242430; border-radius:12px; padding:14px; margin-bottom:14px; }
+    table { width:100%; border-collapse: collapse; font-size:13px; }
+    th, td { border-bottom:1px solid #232332; text-align:left; padding:8px 6px; vertical-align: top; }
+    .badge { display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; text-transform:uppercase; font-weight:700; }
+    .ok { background:#113b1d; color:#4ade80; }
+    .fail { background:#421313; color:#f87171; }
+    a { color:#ff5f57; }
+    small { color:#aaa; font-weight: 400; }
+    ul { margin:0; padding-left:20px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>FireBurst IT - QA Report</h1>
+  <p class="meta">Run run-2026-03-25T06-31-59-990Z | Base URL: http://localhost:8080 | Env: staging</p>
+
+  <div class="grid">
+    <div class="kpi"><div>Total scenarios</div><div class="v">1</div></div>
+    <div class="kpi"><div>Passed</div><div class="v">0</div></div>
+    <div class="kpi"><div>Failed</div><div class="v">1</div></div>
+    <div class="kpi"><div>Duration</div><div class="v">61s</div></div>
+  </div>
+
+  <section class="card">
+    <h3>Session Video</h3>
+    <video controls width="100%" src="./video.mp4"></video>
+  </section>
+
+  <section class="card">
+    <h3>AI Analysis (llama3.1:8b)</h3>
+    <p>AI analysis unavailable</p>
+    <ul><li>No findings</li></ul>
+  </section>
+
+  <section class="card">
+        <h3>auth-flow <small>smoke, regression, api</small></h3>
+        <table>
+          <thead><tr><th>Step</th><th>Status</th><th>Duration</th><th>Evidence</th><th>Error</th></tr></thead>
+          <tbody><tr>
+            <td>Open login page</td>
+            <td><span class="badge ok">passed</span></td>
+            <td>1793ms</td>
+            <td><a href="./screenshots/1774420321164-open-login-page-ok-a1.png" target="_blank">screenshot</a></td>
+            <td>-</td>
+          </tr><tr>
+            <td>Submit credentials</td>
+            <td><span class="badge fail">failed</span></td>
+            <td>25250ms</td>
+            <td><a href="./screenshots/1774420372270-submit-credentials-fail-a2.png" target="_blank">screenshot</a></td>
+            <td>Submit credentials timeout after 25000ms</td>
+          </tr></tbody>
+        </table>
+      </section>
+</div>
+</body>
+</html>
