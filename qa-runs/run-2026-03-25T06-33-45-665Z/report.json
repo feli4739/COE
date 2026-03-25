@@ -1,0 +1,73 @@
+{
+  "runId": "run-2026-03-25T06-33-45-665Z",
+  "startedAt": "2026-03-25T06:33:45.665Z",
+  "finishedAt": "2026-03-25T06:34:51.225Z",
+  "durationMs": 65560,
+  "baseUrl": "http://localhost:8080",
+  "env": "staging",
+  "tags": [
+    "smoke"
+  ],
+  "totals": {
+    "scenarios": 1,
+    "passed": 0,
+    "failed": 1,
+    "steps": 2
+  },
+  "scenarios": [
+    {
+      "name": "auth-flow",
+      "tags": [
+        "smoke",
+        "regression",
+        "api"
+      ],
+      "status": "failed",
+      "steps": [
+        {
+          "name": "Open login page",
+          "status": "passed",
+          "startedAt": "2026-03-25T06:33:45.862Z",
+          "endedAt": "2026-03-25T06:33:47.331Z",
+          "durationMs": 1469,
+          "attempt": 1,
+          "tags": [
+            "smoke",
+            "regression"
+          ],
+          "screenshot": "screenshots/1774420426864-open-login-page-ok-a1.png"
+        },
+        {
+          "name": "Submit credentials",
+          "status": "failed",
+          "startedAt": "2026-03-25T06:33:47.331Z",
+          "endedAt": "2026-03-25T06:34:37.856Z",
+          "durationMs": 25246,
+          "attempt": 2,
+          "tags": [
+            "smoke",
+            "regression",
+            "api"
+          ],
+          "screenshot": "screenshots/1774420477616-submit-credentials-fail-a2.png",
+          "error": "Submit credentials timeout after 25000ms",
+          "message": "Failed after 2 attempt(s)"
+        }
+      ]
+    }
+  ],
+  "artifacts": {
+    "logs": "logs.json",
+    "errors": "errors.json",
+    "network": "network.json",
+    "screenshotsDir": "screenshots",
+    "video": "video.mp4"
+  },
+  "ai": {
+    "model": "llama3.1:8b",
+    "generatedAt": "2026-03-25T06:34:51.224Z",
+    "summary": "AI analysis unavailable",
+    "findings": [],
+    "unavailableReason": "Ollama HTTP 404"
+  }
+}
